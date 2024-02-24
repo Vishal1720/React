@@ -1,16 +1,35 @@
 import React from 'react'
-
-const Form = () => {
+import { useState } from 'react';
+const Form = (props) => {
+  const [url,seturl]=useState("");
+    const changeurl=(src)=>
+    {
+     
+        seturl(src) 
+        
+    }
+    const handlesubmit=(urloc)=>{if (urloc!=="") props.fun(urloc);props.fun2(true)}
+    
   return (
     <div>
-      <div className="mb-3">
-  <label for="exampleFormControlInput1" className="form-label">Email address</label>
-  <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-</div>
-<div className="mb-3">
-  <label for="exampleFormControlTextarea1" className="form-label">Address</label>
-  <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
+   <div>
+    <h1 id="heading">Upload</h1>
+  
+    <section style={{width:"50%",display:'flex',flexDirection:'column',margin:'auto'}}>
+  <div className="form-group">
+    <label htmlFor="exampleInputEmail1">Description</label>
+    <input type="text" className="form-control"   placeholder="Enter description"/>
+    
+  </div>
+  <div className="form-group">
+    <label htmlFor="exampleInputPassword1">Url</label>
+    <input type="text" className="form-control" id="exampleInputPassword1" onChange={(e)=>changeurl(e.target.value)} value={url} placeholder="Enter url "/>
+  </div>
+  
+  <button onClick={()=>handlesubmit(url)} className="btn btn-primary">Submit</button>
+</section>
+   
+  </div>
     </div>
   )
 }

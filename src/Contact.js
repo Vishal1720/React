@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 import Buttons from './Buttons'
+import bin from './bins.png'
 const Contact = (props) => {
     const [cont,setcontact]=useState([{id:'John',contact:'9145377915'}])
 
@@ -12,7 +13,10 @@ const setname=(nam)=>{
 const setcont=(c)=>{
     setcon(c)
 }
-
+const deletecontact=(username,contactname)=>{
+  const newcontact=cont.filter((e)=>{ return e.name!==username && e.contact!==contactname})
+setcontact(newcontact)
+}
     function setit(name,con)
     {
         
@@ -33,11 +37,14 @@ const setcont=(c)=>{
         <Buttons fun={()=>setit(name1,con)} mystyle={props.mystyle1} textValue="Submit contact"/>
         <h1 className='text-center'>Contacts </h1>
       {cont.map((obj)=>(
+        <div style={{display:'flex',flexWrap:'wrap',marginLeft:'33%',flexDirection:'row'}}> 
        <strong key={obj.id} className='text-center' style={{fontSize:'2rem'}}> <ul key={obj.id}>
         {obj.id}    -    {obj.contact}
-        </ul>
-        </strong>
+        </ul> </strong><img style={{marginLeft:'10px'}} width="35vw" height="35vw" src={bin} alt="Del"  onClick={()=>deletecontact(obj.id,obj.contact)} />
+        
+        </div>
       ))}
+     
 
     </div>
   )

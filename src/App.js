@@ -8,6 +8,7 @@ import Header from './Header';
 import Nav from './Nav';
 import Alert from './Alert';
 import Contact from './Contact';
+import Gallery from './Gallery';
 function App() {
  
   const [dark,setdark]=useState(true);
@@ -98,6 +99,7 @@ const togglemystyle1=()=>{
       <Routes>
       <Route path='about' element={<About mystyle={mystyle1} mystyle1={mystyle2}/>}/>
       <Route path='/' element={<TextForm showAlert={showAlert}/>}/>
+      <Route path='/gallery' element={<Gallery/>}></Route>
       <Route path='/contact' element={<Contact mystyle={mystyle1}/>}/>
       <Route path='index.html' element={<TextForm showAlert={showAlert}/>}/>
      </Routes>

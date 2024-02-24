@@ -6,7 +6,7 @@ const Nav = (props) => {
     <>
     <div className='navbar' style={props.mystyle}>
       <Link to="./">Home</Link>
-      <Link to="./reg">Registration</Link>
+      <Link to="./gallery">Gallery</Link>
       <Link to="./about">About</Link>
       <Link to="./contact">TempContact-Book</Link>
     

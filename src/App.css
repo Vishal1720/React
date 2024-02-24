@@ -25,6 +25,7 @@ button{
   color: white;
 height: fit-content;
 }
+
 h1{
   font-size: 3rem;
   padding: 5px;
@@ -36,6 +37,7 @@ h1{
   font-size: 2rem;
   /* background-color: rgb(26, 25, 25);#4a4a9c */
   background-color: rgb(34, 34, 39);
+ 
 
 }
 a{
@@ -69,10 +71,29 @@ textarea{
 }
 .buttondiv{
   display: flex;
+  flex-direction: row;
+  @media only screen 
+  and (max-device-width: 1000px)
+  { flex-direction: column; }
  width:40%;
  margin: auto;
 
 }
 button{
   background-color:"blue";color:"white";margin-top:"4px";padding:'10px';font-size:'1rem';
+}
+.navbar{
+  position: sticky;
+  top:0;
+}
+
+#heading{
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  text-align: center;
+  font-size:6rem;
+  margin-top: -20px;
+  font-weight: bolder;
+  
+  
 }

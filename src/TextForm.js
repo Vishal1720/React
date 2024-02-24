@@ -3,7 +3,7 @@ import Buttons from './Buttons'
 import { useState } from 'react'
 const TextForm =(props)=>{
     const [text,setText]=useState('I am Vishal Shetty');
-    var tarea=document.getElementById('textField');
+    var tarea;
     
     const upper=()=>{
         var newText=text
@@ -19,6 +19,7 @@ const TextForm =(props)=>{
     }
 
     const emptycheck=(msg,txt)=>{
+      var tarea=document.getElementById('textField');
       if(tarea.value.length === 0)
       props.showAlert(msg,txt)
     }
@@ -32,7 +33,7 @@ const TextForm =(props)=>{
 const [bold,setbold]=useState('normal')
     const boldit=()=>{
     
-        var tarea=document.getElementById('textField');
+         tarea=document.getElementById('textField');
         if(bold === 'normal')
         {
         tarea.style.fontWeight="bold";
@@ -49,6 +50,7 @@ const [bold,setbold]=useState('normal')
       }
 
       const copyit=()=>{
+         tarea=document.getElementById('textField');
         navigator.clipboard.writeText(tarea.value);
         props.showAlert("Nakal karne ki aadat ab tak gayi nahi kya "," Bhai" )
         emptycheck("Khali Kagaz se Kya Nakal karega ","Bhai")
