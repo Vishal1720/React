@@ -97,3 +97,7 @@ button{
   
   
 }
+#Gallery{
+  display: flex;
+  flex-wrap: wrap;
+}
