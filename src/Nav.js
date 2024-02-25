@@ -12,8 +12,11 @@ const Nav = (props) => {
     
       
       <div className="form-check form-switch mx-4 overflow-visible">
-      <label className="form-check-label"  htmlFor="flexSwitchCheckDefault">Light Mode</label>
-  <input style={props.mystyle} className="form-check-input" type="checkbox" onChange={props.btnfun} role="switch" id="flexSwitchCheckDefault"/>
+      <input id="checkboxInput" type="checkbox" onChange={props.btnfun}/>
+    <label class="toggleSwitch" for="checkboxInput">
+    </label>
+     
+  
   
 </div>
     </div>

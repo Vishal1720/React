@@ -17,7 +17,11 @@ const Gallery = () => {
         <>
        { showgal &&
     <div>
-      <h1 id="heading">Gallery</h1><button style={{backgroundColor:'black',width:'70px',height:'70px',color:'white',fontSize:'40px',fontWeight:'bold',borderRadius:'30px',marginBottom:'10px',paddingLeft:'20px'}} onClick={()=>setshowgal(false)}>+</button>
+      {<> <h1 id="heading">Gallery</h1><button onClick={()=>setshowgal(false)} class="cssbuttons-io-button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+  <span>Add</span>
+</button></>
+}
       <div id="Gallery">
         {
         gallery.map((e)=>{
@@ -36,10 +40,7 @@ const Gallery = () => {
         !showgal&&
         <>
       <Form fun={(e,f)=>settheurl(e,f)} fun2={(e)=>setshowgal(e)} />
-      {/* <input type="button" 
-     
-       onClick={()=>setshowgal(true)} style={{borderRadius:'10px',padding:'0px',minWidth:'60px',minHeight:'60px'}}
-        value={'Gallery'}/> */}
+      
        </>
             }
 
