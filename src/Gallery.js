@@ -12,7 +12,7 @@ const Gallery = () => {
     }
 
     const deleteit=(url,desc)=>{
-      setgallery(gallery.filter((item)=>{return url!==item.url && desc!==item.desc}))
+      setgallery(gallery.filter((item)=>{return (url!==item.url && desc!==item.desc)}))
     }
 
 
